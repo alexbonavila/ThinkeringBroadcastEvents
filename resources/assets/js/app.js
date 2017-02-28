@@ -15,6 +15,7 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
+Vue.component('chat-form', require('./components/ChatForm.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -37,7 +38,7 @@ const app = new Vue({
         addMessage(message) {
             this.messages.push(message);
 
-            axios.post('/messages', message).then(response => {
+            axios.post('/chat', message).then(response => {
                 console.log(response.data);
             });
         }

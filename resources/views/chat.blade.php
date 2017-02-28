@@ -81,16 +81,10 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <form action="#" method="post">
-                                {{csrf_field()}}
-                                <div class="input-group">
-                                    <input type="text" name="message" placeholder="Type Message ..."
-                                           class="form-control">
-                                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-success btn-flat">Send</button>
-                      </span>
-                                </div>
-                            </form>
+
+                            <chat-form :user="{{ Auth::user() }}" v-on:messageSent="addMessage"></chat-form>
+
+
                         </div>
                         <!-- /.box-footer-->
                     </div>
