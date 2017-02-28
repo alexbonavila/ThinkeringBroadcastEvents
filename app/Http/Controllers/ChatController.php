@@ -36,4 +36,9 @@ class ChatController extends Controller
         return ['status' => 'Message Sent!'];
     }
 
+    public function fetchMessages(Request $request)
+    {
+        return Message::with('user')->get();
+    }
+
 }
