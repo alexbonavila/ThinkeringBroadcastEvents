@@ -1,18 +1,29 @@
-var app= require('express')();
-var http= require('http').Server(app);
-var io= require('socket.io')(http);
-var Redis= require('ioredis')();
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var Redis = require('ioredis');
 
 var redis = new Redis();
 
-redis.psubscrive('', function (err, count) {
-    console.log('Errors Subscriving to chanel')
+//Subscribe to all Redis Channels
+redis.psubscribe('*', function(err, count) {
+    //Nothing to do here?
+    console.log('Subscribed to ' + count + ' channels');
+    if (err) {
+        console.log('Errors subscribing to channel: ' + err);
+    }
 });
 
-redis.on();
-
-io.emit('chat:missatge');
-
-http.listen(3000, function () {
-    console.log('Listening at port 3000')
+//Broadcast message when received from Redis on all channels
+redis.on('pmessage', function(subscribed,channel, message) {
+    console.log('Message Recieved at channel(' + channel + '): ' + message);
+    message = JSON.parse(message);
+    console.log(channel)
+    console.log(message.event)
+    io.emit(channel + ':' + message.event, message.data);
 });
+
+http.listen(3000, function() {
+        console.log('Listening at port 3000')
+    }
+);
