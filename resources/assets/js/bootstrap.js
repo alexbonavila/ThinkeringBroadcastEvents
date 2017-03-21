@@ -55,9 +55,17 @@ window.Pusher=require('pusher-js');
 
 import Echo from "laravel-echo"
 
+import io from "socket.io-client"
+window.io = io;
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: '89f78d87b6264152eeb9',
+//     cluster: 'eu',
+//     encrypted: true
+// });
+
 window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: '89f78d87b6264152eeb9',
-    cluster: 'eu',
-    encrypted: true
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
 });
