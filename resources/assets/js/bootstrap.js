@@ -50,9 +50,12 @@ Vue.component('login-input-field', require('./components/LoginInputField.vue'));
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+import Echo from "laravel-echo"
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '89f78d87b6264152eeb9',
+    cluster: 'eu',
+    encrypted: true
+});
