@@ -51,6 +51,8 @@ Vue.component('login-input-field', require('./components/LoginInputField.vue'));
  */
 
 
+window.Pusher=require('pusher-js');
+
 import Echo from "laravel-echo"
 
 window.Echo = new Echo({
