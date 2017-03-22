@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Alex\Chat\Http\Controllers\Auth;
 
-use App\User;
+use Alex\Chat\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Alex\Chat\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 /**

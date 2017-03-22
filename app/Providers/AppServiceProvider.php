@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Alex\Chat\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

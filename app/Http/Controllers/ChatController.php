@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Alex\Chat\Http\Controllers;
 
-use App\Events\MessageSent;
-use App\Message;
+use Alex\Chat\Events\MessageSent;
+use Alex\Chat\Message;
 use Auth;
 use Illuminate\Http\Request;
 

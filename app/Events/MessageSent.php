@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Events;
+namespace Alex\Chat\Events;
 
-use App\Message;
-use App\User;
+use Alex\Chat\Message;
+use Alex\Chat\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,7 +14,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 /**
  * Class MessageSent
- * @package App\Events
+ * @package Alex\Chat\Events
  */
 class MessageSent implements ShouldBroadcast
 {
