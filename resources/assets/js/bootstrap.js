@@ -70,4 +70,4 @@ window.Echo = new Echo({
     host: window.location.hostname + ':6001'
 });
 
-console.log("hostname location"+window.location.hostname);
+console.log("hostname location "+window.location.hostname);
